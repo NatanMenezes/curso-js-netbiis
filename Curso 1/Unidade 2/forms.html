@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h1>Formulário de cadastro</h1>
+    <!-- Formulários -->
+    <form>
+        <!-- Inputs de texto -->
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Nome" id="nome" />
+        <br />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Email" id="email" />
+        <br />
+        <br />
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" placeholder="Senha" id="senha" />
+        <br />
+        <br />
+        <label for="phone">Telefone:</label>
+        <input type="tel" name="phone" placeholder="Telefone" id="phone" />
+        <br />
+
+        <!-- Input Radio -->
+        <p>Sexo:</p>
+        <input type="radio" name="sexo" value="masculino" id="masculino" />
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="sexo" value="feminino" id="feminino" />
+        <label for="feminino">Feminino</label>
+
+        <!-- Input Checkbox -->
+        <p>Linguagens aprendidas</p>
+        <input type="checkbox" name="linguagens" value="html" id="html" />
+        <label for="html">HTML</label>
+        <input type="checkbox" name="linguagens" value="css" id="css" />
+        <label for="css">CSS</label>
+        <input type="checkbox" name="linguagens" value="js" id="js" />
+        <label for="js">JavaScript</label>
+        <br />
+        <br />
+        <!-- Select -->
+        <label for="regiao">Região:</label>
+        <select name="regiao" id="regiao">
+            <option value="norte">Norte</option>
+            <option value="nordeste">Nordeste</option>
+            <option value="centro-oeste">Centro-Oeste</option>
+            <option value="sudeste">Sudeste</option>
+            <option value="sul">Sul</option>
+        </select>
+        <br />
+        <br />
+        <!-- Textarea -->
+        <label for="mensagem">
+            <p>Mensagem:</p>
+        </label>
+        <textarea 
+            name="mensagem" 
+            id="mensagem" 
+            cols="30" 
+            rows="5" 
+            placeholder="Digite aqui a sua mensagem">
+        </textarea>
+    </form>
+    <!-- Botões -->
+    <input type="submit" value="Enviar"/>
+    <button>Enviar</button>
+</body>
+
+</html>
