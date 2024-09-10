@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+        #item1 {
+            background-color: black;
+            width: 80%;
+            border: 2px solid red;
+            /* Indica que vamos usar o flexbox */
+            display: flex;
+            /* Define a direção, vertical(column) ou horizontal(row)*/
+            flex-direction: row; /* Padrão: row */
+            /* Define a forma que o conteúdo será distribuído ou alinhado */
+            justify-content: space-between;
+        }
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item" id="item1">
+            <h1>Item 1</h1>
+            <h1>Item 2</h1>
+            <h1>Item 3</h1>
+        </div>
+    </div>
+</body>
+</html>

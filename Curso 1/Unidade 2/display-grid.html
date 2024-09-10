@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Grid</title>
+    <style>
+        .menu {
+            display: grid;
+            /* Define a estrutura das colunas da grade */
+            grid-template-columns: repeat(3, 1fr);
+            /* Espaçamento entre os elementos da grade */
+            gap: 10px;
+            padding: 0 20%;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="element"><h3>Home</h3></div>
+        <div class="element"><h3>Contato</h3></div>
+        <div class="element"><h3>Clientes</h3></div>
+    </div>
+</body>
+</html>
