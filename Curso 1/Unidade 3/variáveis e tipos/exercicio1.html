@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+    <script>
+        let nome = prompt("Digite seu nome: ");
+        let idade = prompt("Digite sua idade: ");
+        let email = prompt("Digite seu email: ");
+        let telefone = prompt("Digite seu telefone: ");
+
+        document.write(nome);
+        document.write("<br>");
+        document.write(idade);
+        document.write("<br>");
+        document.write(email);
+        document.write("<br>");
+        document.write(telefone);
+
+        let obj = {
+            nome: nome,
+            idade: idade,
+            email: email,
+            telefone: telefone
+        }
+
+        console.log(obj);
+    </script>
+</body>
+</html>
