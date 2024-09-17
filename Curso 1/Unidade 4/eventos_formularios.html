@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulário de Contato</h2>
+        <form id="formulario">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" placeholder="Digite sua mensagem"></textarea>
+
+            <label for="horario">Horario preferido</label>
+            <!-- checkboxes -->
+            <input type="checkbox" id="manha" name="manha" value="manha">
+            <label for="manha">Manhã</label>
+            <input type="checkbox" id="tarde" name="tarde" value="tarde">
+            <label for="tarde">Tarde</label>
+            <input type="checkbox" id="noite" name="noite" value="noite">
+            <label for="noite">Noite</label>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('formulario');
+        const container = document.querySelector('.container');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        const manha = document.getElementById('manha');
+        const tarde = document.getElementById('tarde');
+        const noite = document.getElementById('noite');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            handleSubmit();
+        });
+
+        function handleSubmit() {
+            container.innerHTML = '<h2>Formulário enviado com sucesso!</h2>';
+            container.innerHTML += `
+                <p>Nome: ${name.value}</p>
+                <p>E-mail: ${email.value}</p>
+                <p>Mensagem: ${message.value}</p>
+                <p>Manhã: ${manha.checked}</p>
+                <p>Tarde: ${tarde.checked}</p>
+                <p>Noite: ${noite.checked}</p>
+            `;
+            console.log('Nome:', name.value);
+            console.log('E-mail:', email.value);
+            console.log('Mensagem:', message.value);
+            console.log('Manhã:', manha.checked);
+            console.log('Tarde:', tarde.checked);
+            console.log('Noite:', noite.checked);
+        }
+    </script>
+</body>
+</html>

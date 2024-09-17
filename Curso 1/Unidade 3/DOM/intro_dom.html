@@ -6,10 +6,43 @@
     <title>DOM</title>
 </head>
 <body>
-    <h1 id="titulo">Vamos aprender DOM</h1>
+    <h1 id="titulo" style="color: blue;">Nosso título</h1>
+    <p class="paragrafo">Nosso parágrafo</p>
+    <p class="paragrafo">Nosso parágrafo</p>
+
+    <input type="text" name="nome" placeholder="Digite seu nome">
+
+    <!-- checkbox simples -->
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <label for="checkbox">Checked</label>
+
     <script>
-        let elTitulo = document.getElementById("titulo");
-        elTitulo.style.color = "red";
+        // Selecionando elementos
+        let titulo = document.getElementById('titulo');
+        let paragrafos = document.getElementsByClassName('paragrafo');
+        let paragrafosTag = document.getElementsByTagName('p');
+        let inputs = document.getElementsByName('nome');
+        let checkbox = document.getElementById('checkbox');
+        let querySelectorTitulo = document.querySelector('#titulo');
+        let querySelectorParagrafo = document.querySelectorAll('.paragrafo');
+        
+        // Acessando atributo dos nossos elementos
+        // Acessando o conteúdo do elemento
+        console.log(titulo.innerHTML);
+        console.log(paragrafos[0].innerText);
+        // Acessando os estilos do elemento
+        console.log(titulo.style.color);
+        // Acessando outras propriedades
+        console.log(inputs[0].placeholder);
+        console.log(inputs[0].name);
+        console.log(inputs[0].value);
+        console.log(checkbox.checked);
+
+        // Modificando elementos
+        titulo.innerText = 'Novo título';
+        paragrafos[0].innerText += ': Alterado';
+        inputs[0].value = 'Valor Padrão';
+        checkbox.checked = true;
     </script>
 </body>
 </html>

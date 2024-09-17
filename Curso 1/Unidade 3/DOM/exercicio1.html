@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+    <h1 id="titulo">Seja bem vindo!</h1>
+
+    <script>
+        let pergunta = prompt('Qual a cor do background que você deseja?');
+        let pergunta2 = prompt('Qual o conteúdo da mensagem de boas vindas?');
+        let body = document.getElementsByTagName('body')[0];
+        let h1 = document.getElementById('titulo');
+        body.style.backgroundColor = pergunta;
+        h1.innerText = pergunta2;
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        button {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="remover">-</button>
+        <h1 id="valor">0</h1>
+        <button id="adicionar">+</button>
+    </div>
+
+    <script>
+        let valor = 0;
+        let valorEl = document.getElementById('valor');
+        let btnAdicionar = document.getElementById('adicionar');
+        let btnRemover = document.getElementById('remover');
+        // btnAdicionar.onclick = adicionar;
+        // btnRemover.onclick = remover;
+        btnAdicionar.addEventListener('click', function() {
+            valor++;
+            valorEl.innerText = valor;
+        });
+        btnRemover.addEventListener('click', () => {
+            valor--;
+            valorEl.innerText = valor;
+        });
+    </script>
+</body>
+</html>
