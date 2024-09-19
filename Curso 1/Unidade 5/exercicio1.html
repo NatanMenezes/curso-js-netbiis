@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino</title>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .titulo {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .input-text {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #bemvindo, #naopermitido {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Site de apostas</h1>
+
+        <div id="formulario">
+            <input type="number" placeholder="Digite a sua idade" class="input-text" id="idade"/>
+            <br/>
+            <input type="checkbox" name="termos" id="termos">
+            <label for="termos">Declaro que li e concordo com os termos de uso</label>
+            <br/>
+            <button id="enviar" onclick="handleClick()">Enviar</button>
+        </div>
+
+
+        <div id="bemvindo">
+            <h1>Seja bem vindo ao nosso site</h1>
+            <button onclick="reiniciarFormulario()">Reiniciar</button>
+        </div>
+        <div id="naopermitido">
+            <h1>Você não tem permissão para acessar o site</h1>
+            <button onclick="reiniciarFormulario()">Reiniciar</button>
+        </div>
+    </div>
+
+    <script>
+        const inputIdade = document.getElementById('idade');
+        const inputTermos = document.getElementById('termos');
+        const btnEnviar = document.getElementById('enviar');
+        const dvBemVindo = document.getElementById('bemvindo');
+        const dvNaoPermitido = document.getElementById('naopermitido');
+        const dvFormulario = document.getElementById('formulario');
+        
+        function handleClick() {
+            if(inputIdade.value >= 18 && inputTermos.checked) {
+                dvBemVindo.style.display = 'block';
+            } else {
+                dvNaoPermitido.style.display = 'block';
+            }
+            dvFormulario.style.display = 'none';
+        }
+
+        function reiniciarFormulario() {
+            dvBemVindo.style.display = 'none';
+            dvNaoPermitido.style.display = 'none';
+            dvFormulario.style.display = 'block';
+            inputIdade.value = '';
+            inputTermos.checked = false;
+        }
+    </script>
+</body>
+</html>
