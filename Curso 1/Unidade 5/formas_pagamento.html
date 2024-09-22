@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Pagamento</title>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Formas de pagamento</h1>
+        <label for="valor">Digite o valor da compra:</label>
+        <input type="number" id="valor" name="valor" min="0" step="1" required>
+        <p>Selecione a forma de pagamento:</p>
+        <select name="pagamento" id="pagamento">
+            <option value="dinheiro">À vista: dinheiro ou pix</option>
+            <option value="debito">Crédito à vista ou Débito</option>
+            <option value="parcelado2">Crédito parcelado em 2x</option>
+            <option value="parcelado3">Crédito parcelado em 3x</option>
+        </select>
+
+        <button onclick="pagamento()">Finalizar compra</button>
+
+        <h2 id="total">Valor total: </h2>
+
+        <script>
+            const inputValor = document.getElementById('valor');
+            const selectPagamento = document.getElementById('pagamento');
+            const h2Total = document.getElementById('total');
+
+            function pagamento() {
+                const valor = inputValor.value;
+                const pagamento = selectPagamento.value;
+                let total;
+
+                switch (pagamento) {
+                    case 'dinheiro':
+                        total = valor * 0.9;
+                        break;
+                    case 'debito':
+                        total = valor * 0.95;
+                        break;
+                    case 'parcelado2':
+                        total = parseFloat(valor);
+                        break;
+                    case 'parcelado3':
+                        total = valor * 1.1;
+                        break;
+                    default:
+                        alert('Selecione uma forma de pagamento');
+                }
+                h2Total.innerText = `Valor total: R$ ${total.toFixed(2)}`;
+                // h2Total.innerText = "Valor total: R$ " + total.toFixed(2);
+            }
+        </script>
+    </div>
+</body>
+</html>
