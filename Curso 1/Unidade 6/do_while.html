@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do while</title>
+</head>
+<body>
+    <h1 id="titulo"></h1>
+
+    <script>
+        var soma = 0;
+        var contador = 0;
+        var nota = 0;
+
+        do {
+            nota = parseFloat(prompt("Insira uma nota ou 0 para sair: "));
+            if(isNaN(nota)) {
+                alert("Nota inválida!");
+                // Break: sai do laço
+                // break;
+                // Continue: pula para a próxima iteração
+                continue;
+            }
+            if (nota !== 0) {
+                soma += nota;
+                contador++;
+            }
+        } while (nota !== 0);
+
+        var media = soma / contador;
+        document.getElementById("titulo").innerHTML = "Média: " + media;
+    </script>
+</body>
+</html>

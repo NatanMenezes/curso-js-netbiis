@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Of</title>
+</head>
+<body>
+    <ul id="tarefas">
+    </ul>
+
+    <script>
+        let listaTarefasEl = document.getElementById('tarefas');
+        let tarefas = ['Estudar', 'Trabalhar', 'Descansar', 'Lazer', 'Dormir', 'Comer'];
+
+        for (let tarefa of tarefas) {
+            listaTarefasEl.innerHTML += `<li>${tarefa}</li>`;
+        }
+    </script>
+</body>
+</html>
