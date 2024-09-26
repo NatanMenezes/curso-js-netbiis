@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+ul.candidatos {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.candidatos li {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+ul.candidatos li:hover {
+    background-color: #e2e6ea;
+}
+
+.nome-candidato {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.votos-candidato {
+    font-size: 16px;
+    color: #007bff;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.btn-votar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-votar:hover {
+    background-color: #0056b3;
+}
