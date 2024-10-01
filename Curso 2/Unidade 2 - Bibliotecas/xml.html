@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+</head>
+<body>
+    
+
+    <script>
+        const xmlString = /*xml*/ `
+            <clientes>
+                <cliente>
+                    <nome>João</nome>
+                    <idade>25</idade>
+                </cliente>
+                <cliente>
+                    <nome>Maria</nome>
+                    <idade>30</idade>
+                </cliente>
+            </clientes>
+        `;
+        // Convertendo a string XML em um documento XML
+        function parseXml(xmlString) {
+            const parser = new DOMParser();
+            const xmlDocument = parser.parseFromString(xmlString, 'text/xml');
+            return xmlDocument;
+        }
+        // Transformando o documento XML em um objeto
+        function xmlToObject(xmlDoc) {
+            const clientes = xmlDoc.querySelectorAll('cliente');
+            const clientesList = [];
+            for (let cliente of clientes) {
+                const nome = cliente.querySelector('nome').textContent;
+                const idade = cliente.querySelector('idade').textContent;
+                clientesList.push({nome, idade});
+            }
+            
+            return clientesList;
+        }
+        
+        // Adicionando um novo cliente ao documento XML
+        function adicionarCliente(xmlDocument, cliente) {
+            const novoCliente = xmlDocument.createElement('cliente');
+            novoCliente.innerHTML = `
+                <nome>${cliente.nome}</nome>
+                <idade>${cliente.idade}</idade>
+            `;
+            xmlDocument.querySelector('clientes').appendChild(novoCliente);
+        }
+
+        // Removendo um cliente do documento XML
+        function removerCliente(xmlDocument, nome) {
+            const clientes = xmlDocument.querySelectorAll('cliente');
+            for (let cliente of clientes) {
+                if (cliente.querySelector('nome').textContent === nome) {
+                    // Removendo o cliente
+                    cliente.remove();
+                }
+            }
+        }
+
+        // Convertendo XML para string
+        function xmlToString(xmlDocument) {
+            const serializer = new XMLSerializer();
+            const xmlString = serializer.serializeToString(xmlDocument);
+            return xmlString;
+        }
+        const xmlDocument = parseXml(xmlString);
+        const clientesList = xmlToObject(xmlDocument);
+        console.log(clientesList);
+        adicionarCliente(xmlDocument, {nome: 'José', idade: 35});
+        console.log(xmlDocument);
+        removerCliente(xmlDocument, 'Maria');
+        console.log(xmlToString(xmlDocument));
+        
+
+        
+    </script>
+</body>
+</html>
