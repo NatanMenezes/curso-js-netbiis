@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    margin-bottom: 10px;
+}
+
+.company-info,
+.vehicle-list {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-info {
+    margin-top: 20px;
+}
+
+.company-info h2,
+.vehicle-list h2 {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    margin-top: 0;
+}
+
+.company-details,
+.headquarters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-details div,
+.headquarters div {
+    flex: 1;
+    padding: 10px;
+}
+
+.company-details div:first-child,
+.headquarters div:first-child {
+    flex: 2;
+}
+
+.vehicle-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vehicle-list th,
+.vehicle-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.vehicle-list th {
+    background-color: #333;
+    color: white;
+}
+
+.vehicle-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

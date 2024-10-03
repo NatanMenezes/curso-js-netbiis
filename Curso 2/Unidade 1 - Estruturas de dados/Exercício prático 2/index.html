@@ -16,22 +16,20 @@
             <h2>Simulação de Urna</h2>
             <div class="urna-input-group">
                 <input type="number" id="numero-candidato" placeholder="Número" min="1" />
-                <button class="btn-votar-urna">Votar</button>
+                <button class="btn-votar-urna" id="btn-votar">Votar</button>
             </div>
             <div class="urna-feedback" id="urna-feedback"></div>
         </div>
         <h1>Votação de Candidatos</h1>
-        <ul class="candidatos">
+        <ul class="candidatos" id="candidatos">
             <!-- A lista de candidatos será gerada dinamicamente aqui -->
             <li>
                 <span class="nome-candidato">Nome</span>
                 <span class="votos-candidato">X votos</span>
-                <button class="btn-votar" onclick="votaCandidato('Nome')">Votar</button>
             </li>
             <li>
                 <span class="nome-candidato">Nome</span>
                 <span class="votos-candidato">X votos</span>
-                <button class="btn-votar" onclick="votaCandidato('Nome')">Votar</button>
             </li>
         </ul>
 
