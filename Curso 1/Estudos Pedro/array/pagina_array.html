@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="dados"></h1>
+
+    <script>
+
+        let dados = {nome:'Fulano', idade: 255, email :'email@email.com'};
+
+        dados.nome = prompt('Insira o seu nome:');
+        dados.idade = parseInt(prompt('Insira sua idade:'));
+        dados.email = prompt('Insira seu email: ');
+        let mostrarDados = document.getElementById("dados");
+        console.log(dados);
+
+
+        alert(dados);
+    </script>
+</body>
+</html>
