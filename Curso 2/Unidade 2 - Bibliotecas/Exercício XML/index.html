@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <h1>Frota de Veículos - Transportes Rapidez</h1>
+        <h1 id="titulo">Frota de Veículos - Transportes Rapidez</h1>
     </header>
 
     <div class="container">
@@ -21,14 +21,14 @@
             <h2>Informações da Empresa</h2>
             <div class="company-details">
                 <div>
-                    <p><strong>Nome da Empresa:</strong> Transportes Rapidez</p>
-                    <p><strong>Telefone:</strong> (21) 9876-5432</p>
+                    <p><strong>Nome da Empresa:</strong> <span id="empresa">Rapidez</span></p>
+                    <p><strong>Telefone:</strong> <span id="telefone">(21) 9876-5432</span></p>
                 </div>
                 <div>
                     <p><strong>Sede:</strong></p>
-                    <p>Rua da Logística, 456</p>
-                    <p>Rio de Janeiro, RJ</p>
-                    <p>CEP: 20000-000</p>
+                    <p id="rua">Rua da Logística, 456</p>
+                    <p id="cidade">Rio de Janeiro, RJ</p>
+                    <p id="cep">CEP: 20000-000</p>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         <th>Disponível</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                     <tr>
                         <td>Mercedes-Benz Sprinter</td>
                         <td>2020</td>
