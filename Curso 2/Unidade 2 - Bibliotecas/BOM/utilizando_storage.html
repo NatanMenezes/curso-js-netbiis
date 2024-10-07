@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage e SessionStorage</title>
+</head>
+<body>
+    
+    <script>
+        const nome = localStorage.getItem('nome');
+        const cidade = sessionStorage.getItem('cidade');
+
+        document.write(nome + '<br>');
+        document.write(cidade + '<br>');
+
+        localStorage.removeItem('nome');
+        sessionStorage.removeItem('cidade');
+    </script>
+</body>
+</html>

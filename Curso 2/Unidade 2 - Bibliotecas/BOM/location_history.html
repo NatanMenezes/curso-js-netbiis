@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+<body>
+    <button onclick="trocarHref()">Trocar href</button>
+    <button onclick="fazerAssign()">Assign</button>
+    <button onclick="fazerReplace()">Replace</button>
+    <button onclick="fazerReload()">Reload</button>
+    <button onclick="navegarPeloHistorico(-3)">Página anterior</button>
+    <button onclick="navegarPeloHistorico(3)">Próxima página</button>
+    <script>
+        console.log(location);
+
+        console.log(location.href); // URL completa
+        console.log(location.protocol); // http, https
+        console.log(location.host); // pega o host e a porta
+        console.log(location.hostname); // pega somente o host
+        console.log(location.port); // pega a porta
+        console.log(location.pathname); // pega o caminho (que vem depois do host)
+        console.log(location.search); // pega a query string (que vem depois do caminho)
+
+        function trocarHref() {
+            location.href = 'https://www.google.com';
+        }
+
+        function fazerAssign() {
+            location.assign('https://www.google.com');
+        }
+
+        function fazerReplace() {
+            location.replace('https://www.google.com');
+        }
+
+        function fazerReload() {
+            location.reload();
+        }
+
+        function paginaAnterior() {
+            history.back();
+        }
+
+        function proximaPagina() {
+            history.forward();
+        }
+
+        function navegarPeloHistorico(n) {
+            history.go(n);
+        }
+        
+    </script>
+</body>
+</html>

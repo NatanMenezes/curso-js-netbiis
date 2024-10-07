@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+</head>
+<body>
+    
+    <script>
+        window.alert('Olá, mundo!');
+        let confirma = window.confirm('Você confirma?');
+        console.log(confirma); // boolean
+        let nome = window.prompt('Qual é o seu nome?');
+        console.log(nome); // string
+
+        // Abre uma nova janela com o site especificado
+        // window.open('https://www.google.com.br', '_blank', 'width=800, height=600');
+        
+        // Fecha a janela
+        // window.close();
+
+        // Dimensões da janela
+        console.log("Largura da janela interna: "+window.innerWidth); // largura
+        console.log("Altura da janela interna: "+window.innerHeight); // altura
+        console.log("Largura da janela externa: "+window.outerWidth); // largura com a barra de ferramentas
+        console.log("Altura da janela externa: "+window.outerHeight); // altura com a barra de ferramentas
+
+        // screen
+        console.log(window.screen); // informações sobre a tela
+        console.log("Largura da tela: "+window.screen.width); // largura
+        console.log("Altura da tela: "+window.screen.height); // altura
+        console.log("Largura da tela disponível: "+window.screen.availWidth); // largura disponível
+        console.log("Altura da tela disponível: "+window.screen.availHeight); // altura disponível
+        console.log("Profundidade de cor: "+window.screen.colorDepth); // profundidade de cor
+
+        // Redimensionar e mover a janela[
+        window.resizeTo(700, 500); // largura, altura
+        window.moveTo(100, 100); // x, y
+    </script>
+</body>
+</html>
