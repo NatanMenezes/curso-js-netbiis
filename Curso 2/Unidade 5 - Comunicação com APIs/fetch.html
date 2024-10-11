@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONPlaceholder API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .post {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .post h2 {
+            color: #333;
+        }
+        .post p {
+            color: #666;
+        }
+        .loading {
+            text-align: center;
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body onload="renderPosts()">
+    <div class="container">
+        <h1>Posts from JSONPlaceholder</h1>
+        <div id="posts">
+            <div class="post">
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>
+            </div>
+        </div>
+        <div class="loading" id="loading">Loading...</div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
