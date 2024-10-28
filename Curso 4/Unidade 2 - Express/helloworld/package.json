@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "joi": "^17.13.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
