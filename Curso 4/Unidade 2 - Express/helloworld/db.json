@@ -1,0 +1,12 @@
+{
+  "alunos": [
+    {
+      "nome": "Natã",
+      "dataNascimento": "2003-01-16",
+      "email": "natan@gmail.com",
+      "notas": [
+        10
+      ]
+    }
+  ]
+}
