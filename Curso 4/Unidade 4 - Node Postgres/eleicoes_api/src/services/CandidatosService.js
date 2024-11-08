@@ -1,17 +1,21 @@
 import * as candidatosRepository from '../repositories/CandidatosRepository.js';
 
-export async function listarCandidatos() {
+export async function listarCandidatos(eleicaoId = false) {
+    if(eleicaoId) {
+        const res = await candidatosRepository.listarCandidatosPorEleicao(eleicaoId);
+        return res;
+    }
     const res = await candidatosRepository.listarCandidatos();
     return res;
 }
 
-export async function obterCandidato(id) {
-    const res = await candidatosRepository.obterCandidato(id);
+export async function obterCandidato(id, eleicaoId) {
+    const res = await candidatosRepository.obterCandidato(id, eleicaoId);
     return res;
 }
 
-export function obterCandidatoPorNumero(numero) {
-    return candidatosRepository.obterCandidatoPorNumero(numero);
+export async function obterCandidatoPorNumero(numero, eleicaoId) {
+    return await candidatosRepository.obterCandidatoPorNumero(numero, eleicaoId);
 }
 
 export async function criarCandidato(candidato) {
@@ -26,10 +30,4 @@ export function atualizarCandidato(id, candidato) {
 
 export async function deletarCandidato(id) {
     await candidatosRepository.deletarCandidato(id);
-}
-
-export function votar(numero) {
-    const candidato = candidatosRepository.obterCandidatoPorNumero(numero);
-    candidato.votos++;
-    candidatosRepository.atualizarCandidato(candidato.id, candidato);
 }

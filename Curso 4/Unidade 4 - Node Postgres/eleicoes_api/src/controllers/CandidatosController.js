@@ -4,10 +4,12 @@ import Joi from 'joi';
 
 export async function listarCandidatos(req, res) {
     if (req.query.numero) {
-        const candidato = candidatosService.obterCandidatoPorNumero(req.query.numero);
+        const candidato = await candidatosService.obterCandidatoPorNumero(req.query.numero, req.query.eleicaoId);
         res.send(candidato);
+        return;
     }
-    const candidatos = await candidatosService.listarCandidatos();
+    console.log(req.query.eleicaoId)
+    const candidatos = await candidatosService.listarCandidatos(req.query.eleicaoId);
     res.send(candidatos);
 }
 
@@ -15,9 +17,9 @@ export async function obterCandidato(req, res) {
     if (!validarId(req.params.id)) {
         res.status(400).send('Id inválido');
     }
-    const candidato = await candidatosService.obterCandidato(req.params.id);
+    const candidato = await candidatosService.obterCandidato(req.params.id, req.query.eleicaoId);
     if (!candidato) {
-        res.status(404).send('Candidato não encontrado');
+        next(new Error('Candidato não encontrado'));
         return;
     }
     res.send(candidato);

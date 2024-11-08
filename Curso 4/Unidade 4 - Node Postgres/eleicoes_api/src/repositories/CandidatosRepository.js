@@ -5,8 +5,18 @@ export async function listarCandidatos() {
     return result.rows;
 }
 
-export async function obterCandidato(id) {
-    const result = await pool.query('SELECT * FROM candidato WHERE id = $1', [id]);
+export async function listarCandidatosPorEleicao(eleicaoId) {
+    const result = await pool.query('SELECT * FROM vw_candidato_eleicao WHERE eleicao_id = $1', [eleicaoId]);
+    return result.rows;
+}
+
+export async function obterCandidato(id, eleicaoId) {
+    const result = await pool.query('SELECT * FROM vw_candidato_eleicao WHERE id = $1 AND eleicao_id = $2', [id, eleicaoId]);
+    return result.rows[0] ?? false;
+}
+
+export async function obterCandidatoPorNumero(numero, eleicaoId) {
+    const result = await pool.query('SELECT * FROM vw_candidato_eleicao WHERE numero = $1 AND eleicao_id = $2', [numero, eleicaoId]);
     return result.rows[0] ?? false;
 }
 
