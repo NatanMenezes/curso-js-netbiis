@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Adicionando um novo cliente ao documento xml
+        function adicionarCliente(xmlDocument, cliente) {
+            const novoCliente = xmlDocument.createElement('cliente');
+            novoCliente.innerHTML = `
+                <nome>${cliente.nome}</nome>
+                <idade>${cliente.idade}</idade>
+            `;
+        }
+
+    </script>
+</body>
+</html>

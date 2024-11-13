@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="trocaHref()">Trocar Href</button>
+    <button onclick="fazerAssign()">Assign</button>
+    <button onclick="fazerReplace()">Replace</button>
+    <button onclick="fazerReload()">Reload</button>
+
+    <script>
+        console.log(location.href); //URL Completa
+        console.log(location.protocol); //http, https
+        console.log(location.host); //pega o host e a porta
+        console.log(location.hostname); //pega somente o host
+        console.log(location.port); //pega a porta
+        console.log(location.pathname); // pega o caminho(que vem depoiss do host)
+        console.log(location.search); //pega o query string (que vem depois do caminho)
+
+        function trocaHref(){
+            location.href = 'https://www.google.com';
+        }
+
+        function fazerAssign(){
+            location.assign('https://www.google.com');
+        }
+
+        function fazerReplace(){
+            location.replace('https://www.google.com');
+        }
+
+        function fazerReload(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>

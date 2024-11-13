@@ -13,3 +13,4 @@ router.get('/', (req, res) => {
 router.use('/alunos', AlunosRouter);
 
 export default router;
+

@@ -11,3 +11,4 @@ router
     .delete('/:id', AlunosController.deletarAluno)
 
 export default router;
+

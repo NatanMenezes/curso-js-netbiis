@@ -9,6 +9,6 @@ app.use('/', AppRouter);
 
 app.use('/static', express.static('public'));
 
-app.listen(3000, () => {
+app.listen(3002, () => {
     console.log("Servidor rodando na porta 3000");
 })

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="título"></h1>
+
+    <script>    
+        var nota = 0;
+        var soma = 0;
+        var contador = 0;
+        
+        do {
+            nota = parseFloat(prompt("Insira uma nota ou 0 para sair:"));
+            if(isNaN(nota)){
+                alert("Nota inválida!");
+                continue;
+            }
+            if(nota !== 0){
+                soma += nota;
+                contador++;
+            }
+        } while (nota !== 0);
+
+        var media = soma / contador;
+        document.getElementById("título").innerHTML = "Média " + media;
+
+
+    </script>
+</body>
+</html>

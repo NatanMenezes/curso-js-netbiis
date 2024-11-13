@@ -1,0 +1,1 @@
+import * as operacoes from './curso js netbiis/Curso 2/Unidade 3 - Modulos/operacoes_arrays.mjs';

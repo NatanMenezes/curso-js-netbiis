@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada de Multiplicação</title>
+    <link rel="stylesheet" href="tabuada.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tabuada de Multiplicação</h1>
+        <div class="input-area">
+            <label for="number">Digite um número:</label>
+            <input type="number" id="number" min="1" max="10">
+            <button id="generate">Gerar Tabuada</button>
+        </div>
+        <div class="result-area">
+            <h2>Resultado:</h2>
+            <table id="result"></table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate').addEventListener('click', function() {
+            const number = parseInt(document.getElementById('number').value);
+            const resultTable = document.getElementById('result');
+            resultTable.innerHTML = ''; // Limpa resultados anteriores
+            
+            // Adiciona cabeçalho
+            const headerRow = document.createElement('tr');
+            headerRow.innerHTML = '<th>Operação</th><th>Resultado</th>';
+            resultTable.appendChild(headerRow);
+            
+            // Gera a tabuada de 0 a 10
+            for (let i = 0; i <= 10; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${number} x ${i}</td><td>${number * i}</td>`;
+                resultTable.appendChild(row);
+            }
+        });
+    </script>
+</body>
+</html>
